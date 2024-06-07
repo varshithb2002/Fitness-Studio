@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: #36454F; color: white; font-family: Arial, sans-serif;">
+
+    <div id="login-signup-container">
+        <div class="login-signup-form">
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="username">Email</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+
+            <p class="login-options-text">Or login through</p>
+
+            <!-- Sign in with Google -->
+            <a href="/auth/google" class="sign-in-link"><img src="/images/google_logo.png" alt="Google" class="logo"></a>
+            
+            <!-- Sign in with Twitter -->
+            <a href="/auth/twitter" class="sign-in-link"><img src="/images/threads-logo.png" alt="Twitter" class="logo"></a>
+            
+            <!-- Display login options text -->
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Gemini ChatBot</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+</head>
+<body style="background-color: #fffcfc; background-image: url('https://www.transparenttextures.com/patterns/back-pattern.png'); background-size: cover; background-position: center;">
+    <div class="chat-container">
+        <h1 style="text-align: center; margin-top: 0; margin-left: 40px;">FitBot: Your Fitness Assistant</h1>
+
+        <div class="chat-history">
+            <!-- Chat history goes here -->
+            <% chatHistory.forEach(function(message) { %>
+                <div class="chat-bubble <%= message.role %>">
+                    <% if (message.role === 'user') { %>
+                        <span class="emoji">😊</span>
+                    <% } else if (message.role === 'assistant') { %>
+                        <span class="emoji">🤖</span>
+                    <% } %>
+                    <p><%= message.text %></p>
+                </div>
+            <% }); %>
+        </div>
+        <form action="/new" method="post">
+            <div class="input-container">
+                <input type="text" name="userInput" class="user-input" placeholder="Ask me anything...">
+                <button type="submit" class="send-button">⪼</button>
+            </div>                      
+        </form>
+    </div>
+</body>
+</html>
